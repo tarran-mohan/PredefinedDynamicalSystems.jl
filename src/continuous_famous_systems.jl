@@ -1201,17 +1201,22 @@ k1 = -0.17, k2 = -0.17, k_el = 0.0, xv = 2.0)
 ```
 ```math
 \\begin{aligned}
-\\dot x_{i} = y_{i} + bx^{2}_{i} - ax^{3}_{i} - z_{i} + I - k_{i}(x_{i} - v_{s})\\Gamma(x_{j}) + k(x_{j} - x_{i})\\\\
-\\dot y_{i} = c - d x^{2}_{i} - y_{i}\\\\
-\\dot z_{i} = r[s(x_{i} - x_{R}) - z_{i}]\\\\
-\\i,j=1,2 (i\\neq j).\\\\
+\\dot x_{i} &= y_{i} + bx^{2}_{i} - ax^{3}_{i} - z_{i} + I - k_{i}(x_{i} - v_{s})\\Gamma(x_{j}) + k(x_{j} - x_{i})\\\\
+\\dot y_{i} &= c - d x^{2}_{i} - y_{i}\\\\
+\\dot z_{i} &= r[s(x_{i} - x_{R}) - z_{i}]\\\\
 \\end{aligned}
 ```
+where ``i,j=1,2 (i\\neq j)`` denote two oscillators.
 
 The two coupled Hindmarsh Rose element by chemical and electrical synapse.
-it is modelling the dynamics of a neuron's membrane potential.
+It is modelling the dynamics of a neuron's membrane potential.
 The default parameter values are taken from article "Dragon-king-like extreme events in
-coupled bursting neurons", DOI:https://doi.org/10.1103/PhysRevE.97.062311.
+coupled bursting neurons", from [^Mishra2018].
+
+[^Mirshra2018]:
+    A. Mishra, S. Saha, M. Vigneshwaran, P. Pal, T. Kapitaniak, and S. K. Dana,
+    "Dragon-king-like extreme events in coupled bursting neurons",
+    Phys. Rev. E, vol. 97, no. 6, p. 062311, Jun. 2018, doi: 10.1103/PhysRevE.97.062311.
 """
 function hindmarshrose_two_coupled(u0=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6];
 			a = 1.0, b = 3.0, c=1.0, d = 5.0, r = 0.001, s = 4.0, xr = -1.6, I = 4.0,
@@ -1366,14 +1371,15 @@ Pacific barnacle [^MorrisLecar1981]. Its evolution is given by:
 ```math
 \\begin{aligned}
 \\dot{V} &= -g_{Ca} M(V) (V - V_{Ca}) - g_K N (V - V_K) - g_L (V - V_L) + I \\\\
-\\dot{N} &= (-N + G(V)) / \tau \\\\
+\\dot{N} &= (-N + G(V)) / \\tau \\\\
 \\end{aligned}
 ```
 with
 ```math
 \\begin{aligned}
-M(V) = 0.5 (1 + \\tanh((x-V1)/V2)) \\\\
-G(V) = 0.5 (1 + \\tanh((x-V3)/V4)) \\\\
+M(V) &= 0.5 (1 + \\tanh((x-V1)/V2)) \\\\
+G(V) &= 0.5 (1 + \\tanh((x-V3)/V4)) \\\\
+\\end{aligned}
 ```
 
 [^IzhikevichBook]:
