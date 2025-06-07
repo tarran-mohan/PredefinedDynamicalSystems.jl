@@ -410,7 +410,7 @@ rikitake(u0 = [1, 0, 0.6]; μ = 1.0, α = 1.0)
 \\begin{aligned}
 \\dot{x} &= -\\mu x +yz \\\\
 \\dot{y} &= -\\mu y +x(z-\\alpha) \\\\
-\\dot{z} &= 1 - xz
+\\dot{z} &= 1 - xy
 \\end{aligned}
 ```
 Rikitake's dynamo [^Rikitake1958] is a system that tries to model the magnetic
